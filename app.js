@@ -6,23 +6,43 @@ const { requireAuth } = require('./src/Middleware/authMiddleware');
 const app = express();
 
 // Conexión a la base de datos
-const url = 'mongodb://127.0.0.1:27017/ServicioSolidario';
-
-mongoose.connect(url)
-.then(()=> console.log('Hemos llegado a MongoDB...!'))
-.catch((error)=> console.log('Error en:' + error))
+mongoose.connect('mongodb://localhost:27017/ServicioSolidario', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    createUser: true,
+    getUserByUsername: true
+}).then(() => {
+    console.log('Conexión exitosa a la base de datos');
+}).catch(err => {
+    console.error('Error al conectar a la base de datos:', err);
+});
 
 // Middleware
 app.use(express.json());
-
-// Rutas
 app.use('/api/auth', authRoutes);
 
+
+/*
+// Rutas
+const authRoutes = require('./src/routes/authRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const empleoRoutes = require('./src/routes/empleoRoutes');
+const postulacionRoutes = require('./src/routes/postulacionRoutes');
+
+app.use('/login', authRoutes);
+app.use('/register', userRoutes);
+app.use('/empleo', empleoRoutes);
+app.use('/postulaciones', postulacionRoutes);
+*/
 // Ruta protegida
 app.get('/api/protected', requireAuth, (req, res) => {
     res.json({ message: 'Ruta protegida' });
-});
+})
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080; // Puerto predeterminado si no se proporciona uno en .env
 app.listen(PORT, () => console.log(`Servidor Corriendo en el Puerto ${PORT}`));
+
+
+
+
 

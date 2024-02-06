@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
 const postulacionSchema = new mongoose.Schema({
-empleoId: mongoose.Types.ObjectId,
-userId: mongoose.Types.ObjectId,
-
+    nombre: { type: String, required: true },
+    email: { type: String, required: true },
+    puesto: { type: String, required: true },
+    experiencia: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Postulacion', postulacionSchema);
+const Postulacion = mongoose.model('Postulacion', postulacionSchema);
+
+module.exports = Postulacion
 
