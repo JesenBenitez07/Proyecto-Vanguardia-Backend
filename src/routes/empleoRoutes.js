@@ -1,29 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const empleo = require('../models/empleoModel');
+const empleoController = require('../controller/empleoController')
 
-// Obtener todas las propuestas de empleo
-router.get('/', async (req, res) => {
-    try {
-    const Empleo = await Empleo.find();
-    res.json(Empleo);
-    } catch (error) {
-    res.status(500).json({ error: error.message });
-    }
-});
+// Ruta para mostrar todas las postulaciones
+router.post('/empleos/crear', empleoController.crear);
 
-// Crear una nueva propuesta de empleo
-router.post('/', async (req, res) => {
-    const { title, description, company, salary, location } = req.body;
+// Ruta para insertar una nueva postulación
+router.get('/empleos', empleoController.visualizar);
 
-    try {
-    const newpropuestas = new empleo({ title, description, company, salary, location });
-    const savedPropuestas = await newpropuestas.save();
-    res.json(savedPropuestas);
-    } catch (error) {
-    res.status(500).json({ error: error.message });
-    }
-});
+// Ruta para editar una postulación por ID
+router.put('/empleos/:id', empleoController.editar);
+
+// Ruta para eliminar una postulación por ID
+router.delete('/empleos/:id', empleoController.eliminar);
 
 module.exports = router;
 

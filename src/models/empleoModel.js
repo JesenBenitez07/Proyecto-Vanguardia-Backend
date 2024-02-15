@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const empleoSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
+const empleoSchema = new Schema({
+  idempleo: {type: Number, required: false},
+  titulo: { type: String, required: true },
+  descripcion: { type: String, required: true },
   company: { type: String, required: true },
-  salary: { type: Number, required: true },
-  location: { type: String, required: true },
-});
+  ubicacion: { type: String, required: true },
+  fecha: { type: Date, required: true },
+},{versionkey: false});
 
-const empleo = mongoose.model('empleo', empleoSchema);
+const Empleo = mongoose.model('empleo', empleoSchema);
 
-module.exports = empleo;
+module.exports = Empleo;

@@ -1,32 +1,18 @@
-const express = require('express');
-const router = express.Router();
-const Postulacion = require('../models/postulacionModel');
+const express = require('express')
+const router = express.Router()
 
-// Obtener todas las postulaciones
-router.get('/', async (req, res) => {
-try {
-    const postulaciones = await Postulacion.find();
-    res.json(postulaciones);
-} catch (error) {
-    res.status(500).json({ message: error.message });
-}
-});
+const postulacionController = require('../controller/postulacionController')
 
-// Crear una nueva postulación
-router.post('/', async (req, res) => {
-const postulacion = new Postulacion({
-    nombre: req.body.nombre,
-    email: req.body.email,
-    puesto: req.body.puesto,
-    experiencia: req.body.experiencia
-});
+// Ruta para mostrar todas las postulaciones
+router.get('/api/', postulacionController.visualizar);
 
-try {
-    const nuevaPostulacion = await postulacion.save();
-    res.status(201).json(nuevaPostulacion);
-} catch (error) {
-    res.status(400).json({ message: error.message });
-}
-});
+// Ruta para insertar una nueva postulación
+router.post('/api/crear', postulacionController.crear);
+
+// Ruta para editar una postulación por ID
+router.put('/api/:idpostulacion', postulacionController.editar);
+
+// Ruta para eliminar una postulación por ID
+router.delete('/api/:idpostulacion', postulacionController.eliminar);
 
 module.exports = router;

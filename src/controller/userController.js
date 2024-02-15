@@ -1,3 +1,44 @@
+/*var userService = require('../services/userServices');
+
+var createUserControllerFn = async (req, res) => 
+{
+    try
+    {
+    console.log(req.body);
+    var status = await userService.createUserDBService(req.body);
+    console.log(status);
+
+    if (status) {
+        res.send({ "status": true, "message": "Student created successfully" });
+    } else {
+        res.send({ "status": false, "message": "Error creating user" });
+    }
+}
+catch(err)
+{
+    console.log(err);
+}
+}
+
+var loginUserControllerFn = async (req, res) => {
+    var result = null;
+    try {
+        result = await userService.loginuserDBService(req.body);
+        if (result.status) {
+            res.send({ "status": true, "message": result.msg });
+        } else {
+            res.send({ "status": false, "message": result.msg });
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.send({ "status": false, "message": error.msg });
+    }
+}
+
+module.exports = { createUserControllerFn,loginUserControllerFn };*/
+const express = require('express');
+const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
@@ -58,7 +99,9 @@ const registerUser = async (req, res) => {
         user.password = await bcrypt.hash(password, salt);
 
         // Guardar el usuario en la base de datos
-        await user.save();
+        await user.save().then(
+          res.redirect('/api/')
+      ).catch
 
         res.json({ message: 'Usuario registrado exitosamente' });
     } catch (err) {
@@ -75,9 +118,7 @@ const getUserProfile = async (req, res) => {
     // Implementa la lógica para obtener la información del usuario aquí
 };
 
-module.exports = { loginUser, verifyRole, registerUser, updateUser, getUserProfile };
-
-
+module.exports = { loginUser, verifyRole, registerUser, updateUser, getUserProfile};
 
 
 

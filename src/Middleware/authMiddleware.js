@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+/*const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 
 const requireAuth = (req, res, next) => {
@@ -22,4 +22,4 @@ const requireAuth = (req, res, next) => {
     });
 };
 
-module.exports = { requireAuth };
+module.exports = { requireAuth };*/
