@@ -18,10 +18,7 @@ const db = require('./database');
 
 app.set('view engine', 'ejs');
 
-// Ruta protegida
-//app.get('/api/protected', requireAuth, (req, res) => {
-  //  res.json({ message: 'Ruta protegida' });
-//})
+
 
 const PORT = 8080; 
 app.listen(PORT, () => console.log(`Servidor Corriendo en el Puerto ${PORT}`));
