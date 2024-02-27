@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="card">
+    <h1>Registro de Usuario</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/register">Register</a></li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+
+    <form>
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}" class="form-control" id="stname" placeholder="Enter Name">
+      </div>
+
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" [(ngModel)]="lastname" [ngModelOptions]="{standalone: true}" class="form-control" id="stname" placeholder="Enter Name">
+      </div>
+
+      <div class="form-group">
+        <label>email</label>
+        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="course" placeholder="Enter Name">
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="fee" placeholder="Enter Fee">
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-4" (click)="save()">Guardar</button>
+    </form>
+  </div>
+</div>

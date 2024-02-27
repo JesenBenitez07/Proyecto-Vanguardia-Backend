@@ -1,0 +1,54 @@
+/* Estilo para el contenedor principal */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo para el título "Login" */
+.row h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Estilo para la línea horizontal */
+.row hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Estilo para el formulario */
+.col-sm-6 form {
+  margin-top: 20px;
+}
+
+/* Estilo para las etiquetas de los campos */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilo para los campos de entrada */
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para el botón de login */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
