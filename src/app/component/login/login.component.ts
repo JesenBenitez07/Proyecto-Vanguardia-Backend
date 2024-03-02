@@ -10,12 +10,10 @@ export class LoginComponent {
   password: string = "";
 
   login() {
-    // Aquí puedes implementar la lógica para realizar el inicio de sesión
     console.log('Iniciando sesión con:', this.email, this.password);
   }
 
   redirectToRegister() {
-    // Aquí puedes implementar la lógica para redirigir al usuario a la página de registro
     console.log('Redireccionando al usuario a la página de registro');
   }
 }

@@ -1,0 +1,21 @@
+<section id="inicio" *ngIf="isInicioRouteActive()">
+  <h2>Bienvenido a nuestra plataforma de Servicio Solidario</h2>
+  <p>La verdadera grandeza de una comunidad radica en la suma de pequeños actos solidarios.
+    Contribuyamos juntos al bienestar de quienes más lo necesitan.</p>
+</section>
+
+<section id="buscar-trabajo" *ngIf="isBuscarTrabajoRouteActive()">
+  <h2>Buscar Trabajo</h2>
+</section>
+
+<section id="publicar-empleo" *ngIf="isPublicarEmpleoRouteActive()">
+  <h2>Publicar Empleo</h2>
+</section>
+
+<section id="postulantes" *ngIf="isPostulantesRouteActive()">
+  <h2>Postulantes</h2>
+</section>
+
+<footer>
+  <p>&copy; 2024 Servicio Solidario. Todos los derechos reservados.</p>
+</footer>

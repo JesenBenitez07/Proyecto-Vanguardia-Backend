@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <div class="col-lg-6 offset-lg-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="title">{{ title | uppercase }}</span>
+        <form class="mt-3" [formGroup]="empleoForm" (ngSubmit)="addEmpleo()">
+          <div class="mb-3">
+            <input type="text" formControlName="puesto" class="form-control form-control-lg" placeholder="Puesto">
+            <div class="text-danger"
+              *ngIf="empleoForm.get('puesto')?.hasError('required') && empleoForm.get('puesto')?.touched">
+              <span>Requiere Nombre del Puesto</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <textarea formControlName="descripcion" class="form-control form-control-lg" placeholder="Descripcion"></textarea>
+            <div class="text-danger"
+              *ngIf="empleoForm.get('descripcion')?.hasError('required') && empleoForm.get('descripcion')?.touched">
+              <span>Requiere Descripción del Puesto</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" formControlName="company" class="form-control form-control-lg" placeholder="Empresa">
+            <div class="text-danger"
+              *ngIf="empleoForm.get('company')?.hasError('required') && empleoForm.get('company')?.touched">
+              <span>Requiere Nombre de la Empresa</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" formControlName="ubicacion" class="form-control form-control-lg" placeholder="Ubicación">
+            <div class="text-danger"
+              *ngIf="empleoForm.get('ubicacion')?.hasError('required') && empleoForm.get('ubicacion')?.touched">
+              <span>Requiere Ubicación de la Empresa </span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" formControlName="fecha" class="form-control form-control-lg" placeholder="Fecha">
+            <div class="text-danger"
+              *ngIf="empleoForm.get('fecha')?.hasError('required') && empleoForm.get('fecha')?.touched">
+              <span>Requiere Fecha</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <button routerLink="/" class="btn btn-secondary btn-lg float-start">Atras</button>
+            <button type="submit" [disabled]="empleoForm.invalid"
+              class="btn btn-success btn-lg float-end">Crear Empleo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
