@@ -6,3 +6,6 @@ Creacion de los componentes del Header, Login y Register
 
 # Sprint Backlog 3
 Pruebas y actualizaciones de api en empleo y postulacion
+
+# Sprint Backlog 4
+Nuevos componentes en el Frontend, empleo y lista-empleo
