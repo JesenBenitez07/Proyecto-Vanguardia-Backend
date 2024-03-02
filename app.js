@@ -2,17 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
+const cors = require('cors');
 
 const app = express();
-const empleoRoutes = require('./src/routes/empleoRoutes');
+//const empleoRoutes = require('./src/routes/empleoRoutes');
 
 
 app.use(express.json());
-//app.use(routes);
+app.use(cors())
+
 
 // Usar las rutas
-app.use('/api', empleoRoutes);
-
+app.use('/api/empleos', require('./src/routes/empleoRoutes'));
+app.use('/api/postulaciones', require('./src/routes/postulacionRoutes'));
 // Conexión a la base de datos
 const db = require('./database');
 
