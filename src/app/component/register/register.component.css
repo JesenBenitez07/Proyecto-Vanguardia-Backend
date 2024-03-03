@@ -58,3 +58,11 @@ label {
   margin-top: 1rem;
 }
 
+  .title-line {
+    width: 100%; /* Ajusta la longitud según sea necesario */
+    height: 3px; /* Grosor de la línea */
+    background-color: #333; /* Color de la línea */
+    margin-top: 10px auto; /* Alineación y espacio alrededor de la línea */
+  }
+
+

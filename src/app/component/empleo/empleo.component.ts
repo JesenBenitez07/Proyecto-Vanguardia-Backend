@@ -64,7 +64,7 @@ export class EmpleoComponent implements OnInit  {
   Editar() {
 
     if (this.idempleo !== null) {
-      this.title = 'Editar Puesto';
+      this.title = 'Editar Empleo';
       this._empleoService.getAEmpleo(this.idempleo).subscribe(data => {
         this.empleoForm.setValue({
           puesto: data.puesto,

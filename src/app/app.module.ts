@@ -18,10 +18,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent,
     HomeComponent,
     EmpleoComponent,
-    ListaEmpleoComponent
+    ListaEmpleoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
