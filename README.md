@@ -9,3 +9,6 @@ Pruebas y actualizaciones de api en empleo y postulacion
 
 # Sprint Backlog 4
 Nuevos componentes en el Frontend, empleo y lista-empleo
+
+# Sprint Backlog 5
+Pruebas y actualizaciones de api en Registro de usuarios
