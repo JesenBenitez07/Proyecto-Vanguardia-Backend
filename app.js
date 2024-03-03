@@ -16,7 +16,7 @@ app.use(cors())
 app.use('/api/empleos', require('./src/routes/empleoRoutes'));
 app.use('/api/postulaciones', require('./src/routes/postulacionRoutes'));
 app.use('/api/users', require('./src/routes/userRoutes'));
-//app.use('/api/loginUser', require('./src/routes/userRoutes'));
+app.use('/api/loginUser', require('./src/routes/userRoutes'));
 // Conexión a la base de datos
 const db = require('./database');
 
