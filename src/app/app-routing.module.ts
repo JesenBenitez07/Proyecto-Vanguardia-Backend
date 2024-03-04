@@ -23,8 +23,7 @@ const routes: Routes = [
 //      { path: 'postulantes', component: PostulantesComponent }
     ]
   },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({

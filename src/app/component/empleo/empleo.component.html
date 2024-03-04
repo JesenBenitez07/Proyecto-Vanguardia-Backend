@@ -1,3 +1,37 @@
+<header>
+  <nav class="fixed top-0 left-0 z-50 w-64 h-full bg-green-700 border-r border-green-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3 flex items-center justify-between">
+      <h1 class="text-white text-xl font-semibold sm:text-2xl">Servicio Solidario</h1>
+    </div>
+
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-gradient-to-b from-green-700 to-green-400 dark:bg-gray-800">
+      <ul class="space-y-2 font-medium">
+        <li>
+          <a routerLink="/home" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Empleo</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/empleo" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Crear Empleo</span>
+            <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300"></span>
+          </a>
+        </li>
+        <li>
+          <button (click)="cerrarSesion()" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Cerrar Sesión</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 <div class="container mt-5">
   <div class="col-lg-6 offset-lg-3">
     <div class="card">
@@ -6,7 +40,8 @@
         <div class="title-line"></div>
         <form class="mt-3" [formGroup]="empleoForm" (ngSubmit)="addEmpleo()">
           <div class="mb-3">
-            <input type="text" formControlName="puesto" class="form-control form-control-lg" placeholder="Puesto">
+            <label for="puesto" class="form-label font-weight-bold fs-5 text-start">Puesto:</label>
+            <input type="text" formControlName="puesto" class="form-control form-control-lg" placeholder="">
             <div class="text-danger"
               *ngIf="empleoForm.get('puesto')?.hasError('required') && empleoForm.get('puesto')?.touched">
               <span>Requiere Nombre del Puesto</span>
@@ -14,7 +49,8 @@
           </div>
 
           <div class="mb-3">
-            <textarea formControlName="descripcion" class="form-control form-control-lg" placeholder="Descripcion"></textarea>
+            <label for="descripcion" class="form-label font-weight-bold fs-5 text-start">Descripción:</label>
+            <textarea formControlName="descripcion" class="form-control form-control-lg" placeholder=""></textarea>
             <div class="text-danger"
               *ngIf="empleoForm.get('descripcion')?.hasError('required') && empleoForm.get('descripcion')?.touched">
               <span>Requiere Descripción del Puesto</span>
@@ -22,7 +58,8 @@
           </div>
 
           <div class="mb-3">
-            <input type="text" formControlName="company" class="form-control form-control-lg" placeholder="Empresa">
+            <label for="company" class="form-label font-weight-bold fs-5 text-start">Empresa:</label>
+            <input type="text" formControlName="company" class="form-control form-control-lg" placeholder="">
             <div class="text-danger"
               *ngIf="empleoForm.get('company')?.hasError('required') && empleoForm.get('company')?.touched">
               <span>Requiere Nombre de la Empresa</span>
@@ -30,7 +67,8 @@
           </div>
 
           <div class="mb-3">
-            <input type="text" formControlName="ubicacion" class="form-control form-control-lg" placeholder="Ubicación">
+            <label for="ubicacion" class="form-label font-weight-bold fs-5 text-start">Ubicación:</label>
+            <input type="text" formControlName="ubicacion" class="form-control form-control-lg" placeholder="">
             <div class="text-danger"
               *ngIf="empleoForm.get('ubicacion')?.hasError('required') && empleoForm.get('ubicacion')?.touched">
               <span>Requiere Ubicación de la Empresa </span>
@@ -38,7 +76,8 @@
           </div>
 
           <div class="mb-3">
-            <input type="text" formControlName="fecha" class="form-control form-control-lg" placeholder="Fecha">
+            <label for="fecha" class="form-label font-weight-bold fs-5 text-start">Fecha:</label>
+            <input type="text" formControlName="fecha" class="form-control form-control-lg" placeholder="">
             <div class="text-danger"
               *ngIf="empleoForm.get('fecha')?.hasError('required') && empleoForm.get('fecha')?.touched">
               <span>Requiere Fecha</span>
@@ -56,3 +95,6 @@
   </div>
 </div>
 
+<footer>
+  <b>&copy; 2024 Servicio Solidario. Todos los derechos reservados.</b>
+</footer>

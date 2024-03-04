@@ -100,3 +100,18 @@ ul {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.footer b {
+  text-align: center;
+  padding: 20px; /* Ajusta el espacio interno según sea necesario */
+  background-color: #f4f4f4; /* Ajusta el color de fondo según sea necesario */
+}
+
+p{
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+  color: #080808;
+}
+
+

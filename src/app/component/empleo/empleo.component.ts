@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Empleo } from 'src/app/model/empleo';
 import { EmpleoService } from 'src/app/services/empleo.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-empleo',
@@ -14,7 +15,7 @@ export class EmpleoComponent implements OnInit  {
   title = 'Crear Empleo';
   idempleo: string | null;
 
-  constructor(private fb: FormBuilder, private router: Router, private _empleoService: EmpleoService, private aRouter: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService, private _empleoService: EmpleoService, private aRouter: ActivatedRoute) {
     this.empleoForm = this.fb.group({
       puesto: ['', Validators.required],
       descripcion: ['', Validators.required],
@@ -29,6 +30,10 @@ export class EmpleoComponent implements OnInit  {
     this.Editar();
   }
 
+  cerrarSesion():void{
+    this.loginService.cerrarSesion()
+    this.router.navigate(['/login'])
+  }
   addEmpleo() {
 
     const EMPLEO: Empleo = {

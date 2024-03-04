@@ -1,6 +1,7 @@
 .container {
-  max-width: 400px;
-  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -72,3 +73,10 @@ a:hover {
     background-color: #333; /* Color de la línea */
     margin-top: 10px auto; /* Alineación y espacio alrededor de la línea */
   }
+
+.img-fluid {
+  max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción original */
+  margin-bottom: 20px; /* Ajustar el margen inferior según sea necesario */
+}
+

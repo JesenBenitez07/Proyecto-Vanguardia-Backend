@@ -1,5 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -7,23 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private router: Router, private loginService: LoginService) {}
 
-  ngOnInit() {}
-
-  isInicioRouteActive(): boolean {
-    return this.route.snapshot.routeConfig?.path === 'home' || this.route.snapshot.routeConfig?.path === '';
+  ngOnInit(): void {
   }
 
-  isBuscarTrabajoRouteActive(): boolean {
-    return this.route.snapshot.routeConfig?.path === 'home/buscar-trabajo';
-  }
+  cerrarSesion():void{
+    this.loginService.cerrarSesion()
+    this.router.navigate(['/login'])
 
-  isPublicarEmpleoRouteActive(): boolean {
-    return this.route.snapshot.routeConfig?.path === 'home/publicar-empleo';
-  }
-
-  isPostulantesRouteActive(): boolean {
-    return this.route.snapshot.routeConfig?.path === 'home/postulantes';
   }
 }

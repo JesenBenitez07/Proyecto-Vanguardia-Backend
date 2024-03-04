@@ -7,6 +7,9 @@ import { Login } from '../model/login';
   providedIn: 'root'
 })
 export class LoginService {
+  cerrarSesion() {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'http://localhost:8080/api/loginUser/';
 
   constructor(private http: HttpClient) { }
@@ -18,5 +21,4 @@ export class LoginService {
     // Realizar la solicitud POST al backend para la autenticación
     return this.http.post<any>(loginUrl, credenciales);
   }
-}
-
+};

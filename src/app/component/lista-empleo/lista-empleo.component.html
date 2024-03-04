@@ -1,3 +1,37 @@
+<header>
+  <nav class="fixed top-0 left-0 z-50 w-64 h-full bg-green-700 border-r border-green-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3 flex items-center justify-between">
+      <h1 class="text-white text-xl font-semibold sm:text-2xl">Servicio Solidario</h1>
+    </div>
+
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-gradient-to-b from-green-700 to-green-400 dark:bg-gray-800">
+      <ul class="space-y-2 font-medium">
+        <li>
+          <a routerLink="/home" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Empleo</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/empleo" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Crear Empleo</span>
+            <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300"></span>
+          </a>
+        </li>
+        <li>
+          <button (click)="cerrarSesion()" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="ml-3">Cerrar Sesión</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
@@ -36,3 +70,7 @@
     </div>
   </div>
 </div>
+<br><br>
+<footer>
+  <b>&copy; 2024 Servicio Solidario. Todos los derechos reservados.</b>
+</footer>
