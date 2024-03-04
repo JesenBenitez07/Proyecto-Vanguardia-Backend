@@ -15,3 +15,6 @@ Pruebas y actualizaciones de api en Login y Registro de usuarios
 
 # Sprint Backlog 6
 Creación de cada componente para Login, Registro de Usuarios y Empleo
+
+# Sprint Backlog 7
+Avance de rutas a cada página, a traves del dashboard
