@@ -1,41 +1,65 @@
-body, h1, h2, p, ul, li {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-header {
-  background-color: #081d46;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15rem;
+  width: 15rem;
+  height: 100%;
+  background-color:  #0074cc ;
+  border-right: 1px solid #8ee4af;
   color: #fff;
-  padding: 1em;
-  text-align: center;
+  padding: 1.5rem;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 nav ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
-  text-decoration: none;
-  color: #fff;
-  margin: 0 15px;
+nav li {
+  margin-bottom: 1rem;
+  font-size: 18px;
   font-weight: bold;
 }
 
-main {
-  padding: 20px;
+nav a, nav button {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+nav button {
+  color: #e3342f;
+}
+nav a:hover, nav button:hover {
+  background-color: #4da4e6;
 }
 
-section {
-  margin-bottom: 30px;
+/* Estilos para el contenido principal */
+.content-container {
+  padding: 1rem;
+  margin-left: 15rem;
 }
 
-h2 {
-  color: #333;
+/* Estilos para el pie de página */
+footer {
+  margin-left: 15%; /* Ancho de la barra de navegación */
+  margin-right: 1rem; /* Margen derecho para separar del borde */
+  text-align: center;
+  color: #FFFFFF;
+  padding: 1rem;
+  background-color: #0074cc;
 }
 
 /* Estilos para el formulario de inicio de sesión */
